@@ -17,11 +17,15 @@
 
 
 
+#ifdef error
+# undef error
+#endif
 #include <m_pd.h>
 #include <g_canvas.h>
 #include <stdio.h>
 #include <string.h>
 
+EXTERN void error(const char *fmt, ...);
 
 #ifdef _MSC_VER
 #pragma warning( disable : 4244 )
