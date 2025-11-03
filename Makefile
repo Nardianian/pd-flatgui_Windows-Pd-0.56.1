@@ -52,7 +52,7 @@ LIBRARY_VERSION = $(shell sed -n 's|^\#X text [0-9][0-9]* [0-9][0-9]* VERSION \(
 
 ALL_CFLAGS += -DPD -DVERSION='"$(LIBRARY_VERSION)"'
 
-PD_INCLUDE = $(PD_PATH)/include/pd
+PD_INCLUDE = $(PD_PATH)/src
 # where to install the library, overridden below depending on platform
 prefix = /usr/local
 libdir = $(prefix)/lib
@@ -226,7 +226,7 @@ ifeq (MINGW,$(findstring MINGW,$(UNAME)))
   EXTENSION = dll
   SHARED_EXTENSION = dll
   OS = windows
-  PD_PATH = $(shell cd "$$PROGRAMFILES/pd" && pwd)
+  PD_PATH = /c/PureData
   # MinGW doesn't seem to include cc so force gcc
   CC=gcc
   OPT_CFLAGS = -O3 -funroll-loops -fomit-frame-pointer
@@ -421,3 +421,4 @@ showsetup:
 	@echo "pkglibdir: $(pkglibdir)"
 	@echo "DISTDIR: $(DISTDIR)"
 	@echo "ORIGDIR: $(ORIGDIR)"
+
