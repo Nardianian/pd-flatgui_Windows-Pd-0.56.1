@@ -1,3 +1,5 @@
+Check your Pd installation directory to match those in the Makefile
+==================================================================================
 Flatgui external for modern versions of Pure Data
 =================================================
 
